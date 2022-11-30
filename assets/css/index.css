@@ -1,0 +1,115 @@
+body {
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+video{
+  display: none;
+}
+
+:root {
+  /* colors */
+  --clr-dark: 230 35% 7%;
+  --clr-light: 231 77% 90%;
+  --clr-white: 0 0% 100%;
+
+  /* font-sizes */
+  --fs-700: 40px;
+  --fs-600: 32px;
+  --fs-500: 24px;
+  --fs-400: 20px;
+  --fs-300: 16px;
+  --fs-200: 14px;
+
+  /* font-families */
+  --ff-serif: "Bellefair", serif;
+  --ff-sans-cond: "Barlow Condensed", sans-serif;
+  --ff-sans-normal: "Barlow", sans-serif;
+
+}
+
+/* mobile size */
+@media (min-width: 22.5em) {
+}
+/* tablet size */
+@media (min-width: 45em) {
+  :root {
+    --fs-700: 48px;
+    --fs-600: 36px;
+    --fs-500: 24px;
+    --fs-400: 22px;
+    --fs-300: 18px;
+    --fs-200: 16px;
+  }
+}
+
+/* laptop size */
+@media (min-width: 75em){
+  :root {
+    --fs-700: 56px;
+  }
+}
+/* med laptop size */
+@media (min-width: 87.5em) {
+  :root {
+    --fs-700: 64px;
+  }
+}
+/* desktop size */
+@media (min-width: 100em) {
+  :root {
+    --fs-700: 78px;
+  }
+}
+
+.fs-900 {
+  font-size: var(--fs-900);
+}
+
+.fs-800 {
+  font-size: var(--fs-800);
+}
+
+.fs-700 {
+  font-size: var(--fs-700);
+}
+
+.fs-600 {
+  font-size: var(--fs-600);
+}
+
+.fs-500 {
+  font-size: var(--fs-500);
+}
+
+.fs-400 {
+  font-size: var(--fs-400);
+}
+
+.fs-300 {
+  font-size: var(--fs-300);
+}
+
+.fs-200 {
+  font-size: var(--fs-200);
+}
+.fs-100 {
+  font-size: var(--fs-100);
+}
