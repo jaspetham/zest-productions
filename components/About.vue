@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="my-20 mx-auto text-center uppercase font-bold" style="max-width:120ch;">
+  <section id="aboutSection">
+    <div id="aboutMessage" class="my-20 mx-auto text-center uppercase font-bold opacity-0" style="max-width:120ch;transform:translateY(-100%)">
       <span class="fs-500">Whether it's media production, or media management... be it for personal use or for your business - we are here for exactly for that very reason.</span>
     </div>
     <div class="marquee-container my-20">
@@ -15,7 +15,7 @@
         </span>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -27,6 +27,7 @@
   import sample6 from '~/assets/images/logo-samples/sample6.png'
   import sample7 from '~/assets/images/logo-samples/sample7.png'
   import sample8 from '~/assets/images/logo-samples/sample8.png'
+
   export default {
     data(){
       return{
@@ -74,9 +75,23 @@
         ]
       }
     },
+    mounted(){
+      this.$gsap.to("#aboutMessage", {
+        scrollTrigger: {
+          trigger:'.marquee-container',
+          start:'bottom bottom'
+        },
+        y: 0,
+        opacity:1,
+        duration:2,
+        ease:'bounce'
+      });
+    }
   }
 </script>
 
 <style lang="scss" scoped>
-
+  section#aboutSection{
+    overflow:hidden;
+  }
 </style>
