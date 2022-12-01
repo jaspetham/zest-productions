@@ -2,6 +2,7 @@
   <div id="main">
     <Header/>
     <Canvas/>
+    <About/>
   </div>
 </template>
 

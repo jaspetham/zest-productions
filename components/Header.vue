@@ -16,11 +16,11 @@
         :class="this.menuOpen ? 'active' : ''"
         class="menu-items">
         <div class="menu-body">
-          <div class="header-link"><a href="#">Home</a></div>
-          <div class="header-link"><a href="#">about</a></div>
-          <div class="header-link"><a href="#">blogs</a></div>
-          <div class="header-link"><a href="#">portfolio</a></div>
-          <div class="header-link"><a href="#">contact</a></div>
+          <div class="header-link"><a href="#">Home <span> <font-awesome-icon class="header-icon" :icon="['far', 'compass']"/></span></a></div>
+          <div class="header-link"><a href="#">about <span> <font-awesome-icon class="header-icon" :icon="['far', 'compass']"/></span></a></div>
+          <div class="header-link"><a href="#">blogs <span> <font-awesome-icon class="header-icon" :icon="['far', 'compass']"/></span></a></div>
+          <div class="header-link"><a href="#">portfolio <span> <font-awesome-icon class="header-icon" :icon="['far', 'compass']"/></span></a></div>
+          <div class="header-link"><a href="#">contact <span> <font-awesome-icon class="header-icon" :icon="['far', 'compass']"/></span></a></div>
         </div>
         <div class="menu-footer">
           <a href="https://wa.me/+601110259170" target="_blank" class="fs-400"> <font-awesome-icon :icon="['fab', 'whatsapp']" /> 011 - 1025 9170</a>
@@ -143,9 +143,12 @@
     overflow: hidden;
   }
   .header-link > a{
+    display: flex;
+    align-content: center;
+    gap:1.5rem;
     font-weight: 900;
     font-size: var(--fs-700);
-    line-height: .5em;
+    line-height: .45em;
     text-transform: uppercase;
     max-width: max-content;
     white-space: nowrap;
@@ -153,6 +156,18 @@
     color:white;
     align-items: flex-start;
     transition: color .5s var(--ease);
+  }
+
+  .header-icon{
+    font-size: .8em;
+    overflow: hidden;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all .1s linear;
+  }
+  .header-link:hover > a .header-icon{
+    transform: translateX(0);
+    opacity: 1;
   }
   .header-link:hover > a{
     color:var(--clr-main);
@@ -184,6 +199,7 @@
     }
     .menu-footer{
       grid-template-columns: 1fr;
+      padding: 1rem 1.5rem;
     }
     .menu-footer > a{
       text-align: left!important;

@@ -68,11 +68,13 @@
           this.previousTime = 0;
 
           this.isPlaying = true;
+          this.scrollY = window.scrollY
 
           this.count = 50;
 
           this.raycaster = new THREE.Raycaster();
           this.mouse = {x:0,y:0};
+
 
           this.addSquares();
           this.addObjects();
@@ -81,6 +83,7 @@
           this.addLines();
 
           this.mouseMove();
+          this.scrollMove();
 
           this.resize();
           this.render();
@@ -157,7 +160,11 @@
 
           },false);
         }
-
+        scrollMove(){
+          window.addEventListener('scroll', () =>{
+            this.scrollY = window.scrollY
+          })
+        }
         addPoints(){
           this.materialPoints = new THREE.ShaderMaterial({
             side: THREE.DoubleSide,
@@ -298,6 +305,7 @@
 
           this.scene.rotation.x = -this.mouse.y/10;
           this.scene.rotation.y = this.mouse.x/10;
+          this.scene.position.y = - (this.scrollY / this.height) * 0.5 ;
 
           this.material.uniforms.time.value = this.elapsedTime;
           this.materialSquares.uniforms.time.value = this.elapsedTime;
