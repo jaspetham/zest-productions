@@ -24,9 +24,9 @@
         </div>
         <div class="menu-footer">
           <a href="https://wa.me/+601110259170" target="_blank" class="fs-400"> <font-awesome-icon :icon="['fab', 'whatsapp']" /> 011 - 1025 9170</a>
-          <a href="https://www.facebook.com/zestartistryteam" target="_blank" class="fs-400 text-end"> <font-awesome-icon :icon="['fab', 'facebook']" /> Zest Productions MY</a>
+          <a href="https://www.facebook.com/zestartistryteam" target="_blank" class="fs-400 justify-self-end"> <font-awesome-icon :icon="['fab', 'facebook']" /> Zest Productions MY</a>
           <a href="https://www.instagram.com/byzestproductions/" target="_blank" class="fs-400"> <font-awesome-icon :icon="['fab', 'instagram']" /> @zestproductionsmy</a>
-          <a href="mailto:zestproductionsmy@gmail.com" target="_blank" class="fs-400 text-end"><font-awesome-icon :icon="['far', 'envelope']" /> zestproductionsmy@gmail.com</a>
+          <a href="mailto:zestproductionsmy@gmail.com" target="_blank" class="fs-400 justify-self-end"><font-awesome-icon :icon="['far', 'envelope']" /> zestproductionsmy@gmail.com</a>
         </div>
       </div>
     </div>
@@ -50,7 +50,7 @@
 
 <style lang="css" scoped>
   nav{
-    position: absolute;
+    position: fixed;
     z-index: 99;
     top:0;
     left:0;
@@ -169,7 +169,7 @@
     transform: translateX(0);
     opacity: 1;
   }
-  .header-link:hover > a{
+  .header-link:hover > a,.menu-footer> a:hover{
     color:var(--clr-main);
   }
   .menu-footer{
@@ -188,6 +188,9 @@
     border-top:3px solid #efefef;
     transform: translateY(0);
     opacity: 1;
+  }
+  .menu-footer > a{
+    width:fit-content;
   }
   /* mobile size */
   @media (max-width: 44em) {
