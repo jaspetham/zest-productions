@@ -19,11 +19,13 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     {src:'~/assets/css/index.css', lang:'css'},
-    {src:'~/assets/css/glitch.scss', lang:'scss'}
+    {src:'~/assets/css/glitch.scss', lang:'scss'},
+    '@fortawesome/fontawesome-svg-core/styles.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/fontawesome.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -33,7 +35,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/google-fonts',
-    '@nuxtjs/tailwindcss',
+    '@nuxtjs/tailwindcss'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -61,6 +63,6 @@ export default {
           use: ['raw-loader'],
         })
       }
-    }
+    },
   }
 }

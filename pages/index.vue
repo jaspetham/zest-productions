@@ -1,5 +1,8 @@
 <template>
-  <Canvas/>
+  <div id="main">
+    <Header/>
+    <Canvas/>
+  </div>
 </template>
 
 <script>
