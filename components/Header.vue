@@ -99,7 +99,7 @@
   }
 
   .nav-container .hamburger-lines:hover .line{
-    background:var(--clr-main);
+    background:rgba(var(--clr-main));
   }
 
   .nav-container .hamburger-lines .line {
@@ -194,7 +194,7 @@
     opacity: 1;
   }
   .header-link:hover > a,.menu-footer> a:hover{
-    color:var(--clr-main);
+    color:rgba(var(--clr-main));
   }
   .menu-footer{
     display: grid;

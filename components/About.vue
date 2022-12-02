@@ -253,7 +253,7 @@
     box-sizing: border-box;
     left: 50%;
     top: 50%;
-    background: var(--clr-main);
+    background: rgba(var(--clr-main));
     transform-origin: 50% 50%;
     display: flex;
     width: fit-content;
