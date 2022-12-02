@@ -61,6 +61,11 @@
     methods: {
       menuState(){
         this.menuOpen = !this.menuOpen
+        if(this.menuOpen){
+          document.querySelector('body').style.overflowY = 'hidden';
+        }else{
+          document.querySelector('body').style.overflowY = 'auto';
+        }
       }
     },
   }

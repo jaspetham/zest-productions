@@ -1,5 +1,5 @@
 <template>
-  <section class="section-split">
+  <section id="showcase" class="section-split">
       <div class="scroll-thing-wrapper">
         <section class="scroll-thing hidden lg:block">
           <div id="row" class="row text-main">
@@ -56,6 +56,8 @@
 <script>
   import showcase1Img from '~/assets/images/showcase/1/image.jpg';
   import showcase1Vid from '~/assets/images/showcase/1/video.mp4';
+  import showcase2Img from '~/assets/images/showcase/2/image.jpg';
+  import showcase2Vid from '~/assets/images/showcase/2/video.mp4';
   export default {
     data(){
       return{
@@ -67,10 +69,10 @@
             video:showcase1Vid
           },
           {
-            name:'BoBo Restaurant & Cafe',
-            type:'Restaurant',
-            image:showcase1Img,
-            video:showcase1Vid
+            name:'Hotel 17',
+            type:'Hotel',
+            image:showcase2Img,
+            video:showcase2Vid
           },
         ]
       }
@@ -140,6 +142,7 @@
     max-height: 300px;
   }
   .scroll-thing{
+    max-width:100vw;
     width:100vw;
     height:fit-content;
     z-index: -1;

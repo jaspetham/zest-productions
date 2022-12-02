@@ -3,7 +3,9 @@
     <Header/>
     <Canvas/>
     <About/>
+    <Services/>
     <Showcase/>
+    <Specialty/>
   </div>
 </template>
 

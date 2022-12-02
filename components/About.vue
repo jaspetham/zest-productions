@@ -1,32 +1,21 @@
 <template>
   <section>
-    <div id="aboutMessage" class="my-20 mx-auto text-center uppercase font-bold opacity-0 content-p" style="max-width:120ch;transform:translateY(-100%)">
-      <span class="fs-400">Whether it's media production, or media management... be it for personal use or for your business - we are here for exactly for that very reason.</span>
+    <div id="aboutMessage" class="my-10 mx-auto text-center uppercase font-bold opacity-0 content-p" style="max-width:120ch;transform:translateY(-100%)">
+      <span class="fs-400">Whether it's media production, or media management... be it for <span class="text-main">personal</span> use or for your <span class="text-main">business</span> - we are here for exactly for that very reason.</span>
     </div>
-    <div class="marquee-container my-20">
-      <div class="marquee" style="--play:running; --direction:normal; --duration:30s; --delay:0s; --iteration-count:infinite;">
-        <span class="marquee-item" v-for="(sample,index) in samples" :key="index">
-          <img class="marquee-img" :src="sample.image.url" alt="sample">
-        </span>
-      </div>
-      <div class="marquee" style="--play:running; --direction:normal; --duration:30s; --delay:0s; --iteration-count:infinite;padding-bottom:3vw;">
-        <span class="marquee-item" v-for="(sample,index) in samples" :key="index">
-          <img class="marquee-img" :src="sample.image.url" alt="sample">
-        </span>
-      </div>
-    </div>
+    <div class="my-10 p-10" id="divider"></div>
     <div id="aboutSection" class="relative content-p mt-15">
       <div>
         <span class="fs-500 about-text">
-          We're a media studio with a committed team working on selected projects for startups and companies, bringing what they envision to life through:
-          <span class="inner-text">branding, visual design & development of the highest quality.</span>
+          We're a <span class="text-main">media</span> studio with a committed <span class="text-main">team</span> working on projects for startups and companies, we make your idea into a reality through:
+          <span class="inner-text">branding & visual design of the highest <span class="text-main">quality</span>.</span>
         </span>
         <div class="video-control">
           <div class="control">
             <div @click="runVideo" id="magnetic-wrap">
               <div id="magnetic-area" class="magnetic-size"></div>
               <div id="magnetic-content">
-                <div class="my-burger fs-400">
+                <div class="my-burger fs-400 font-bold">
                   <div class="play-icon play active">
                     <span class="fs-400">Play</span>
                     <font-awesome-icon :icon="['far', 'circle-play']"/>
@@ -53,60 +42,9 @@
 </template>
 
 <script>
-  import sample1 from '~/assets/images/logo-samples/sample1.png'
-  import sample2 from '~/assets/images/logo-samples/sample2.png'
-  import sample3 from '~/assets/images/logo-samples/sample3.png'
-  import sample4 from '~/assets/images/logo-samples/sample4.png'
-  import sample5 from '~/assets/images/logo-samples/sample5.png'
-  import sample6 from '~/assets/images/logo-samples/sample6.png'
-  import sample7 from '~/assets/images/logo-samples/sample7.png'
-  import sample8 from '~/assets/images/logo-samples/sample8.png'
-
   export default {
     data(){
       return{
-        samples:[
-          {
-            image:{
-              url:sample1
-            },
-          },
-          {
-            image:{
-              url:sample2
-            },
-          },
-          {
-            image:{
-              url:sample3
-            },
-          },
-          {
-            image:{
-              url:sample4
-            },
-          },
-          {
-            image:{
-              url:sample5
-            },
-          },
-          {
-            image:{
-              url:sample6
-            },
-          },
-          {
-            image:{
-              url:sample7
-            },
-          },
-          {
-            image:{
-              url:sample8
-            },
-          },
-        ],
         videoState:false
       }
     },
@@ -114,17 +52,17 @@
       let gsap = this.$gsap;
       gsap.to("#aboutMessage", {
         scrollTrigger: {
-          trigger:'.marquee-container',
+          trigger:'#divider',
           start:'bottom bottom'
         },
         y: 0,
         opacity:1,
         duration:2,
-        ease:'bounce'
+        ease:'elastic'
       });
       gsap.to(".about-text", {
         scrollTrigger: {
-          trigger:'.marquee-container',
+          trigger:'#divider',
           start:'center center'
         },
         left: 0,
