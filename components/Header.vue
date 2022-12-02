@@ -1,8 +1,8 @@
 <template>
-  <nav>
+  <nav id="nav">
     <div class="nav-container flex justify-between items-center">
       <div class="nav-img">
-        <img src="~/assets/images/logo.png" alt="" width="80" height="80">
+        <img src="~/assets/images/logo.png" alt="" width="60" height="60">
       </div>
       <div
         @click="menuState"
@@ -40,6 +40,24 @@
         menuOpen:false
       }
     },
+    mounted(){
+      this.$nextTick(function(){
+        window.addEventListener("scroll", function(){
+          var navbar = document.getElementById("nav");
+          var nav_classes = navbar.classList;
+          if(document.documentElement.scrollTop >= 500) {
+            if (nav_classes.contains("isScroll") === false) {
+              nav_classes.toggle("isScroll");
+            }
+          }
+          else {
+            if (nav_classes.contains("isScroll") === true) {
+              nav_classes.toggle("isScroll");
+            }
+          }
+        })
+      })
+    },
     methods: {
       menuState(){
         this.menuOpen = !this.menuOpen
@@ -55,6 +73,12 @@
     top:0;
     left:0;
     width:100%;
+    transition: all .5s ease-in;
+  }
+  nav.isScroll{
+    background:rgba(0,0,0,.5);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
   }
   .nav-container{
     position: relative;

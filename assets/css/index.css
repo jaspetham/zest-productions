@@ -31,7 +31,7 @@ canvas {
   top: 0;
 }
 
-video{
+#video{
   display: none;
 }
 
@@ -56,9 +56,14 @@ video{
   --ff-sans-normal: "Barlow", sans-serif;
 
 }
-
+.content-p {
+  padding: 0 3rem;
+}
 /* mobile size */
-@media (min-width: 22.5em) {
+@media (max-width: 44em) {
+  .content-p{
+    padding:0 1.5rem;
+  }
 }
 /* tablet size */
 @media (min-width: 45em) {
@@ -78,6 +83,9 @@ video{
   :root {
     --fs-800: 64px;
     --fs-700: 56px;
+    --fs-600: 48px;
+    --fs-500: 36px;
+    --fs-400: 28px;
   }
 }
 /* med laptop size */
@@ -85,6 +93,7 @@ video{
   :root {
     --fs-800: 72px;
     --fs-700: 64px;
+    --fs-500: 48px;
   }
 }
 /* desktop size */
