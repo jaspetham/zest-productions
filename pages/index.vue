@@ -3,6 +3,7 @@
     <Header/>
     <Canvas/>
     <About/>
+    <Showcase/>
   </div>
 </template>
 
