@@ -183,6 +183,7 @@
     padding-left: max(16px,1.5625vw);
     padding-right: max(16px,1.5625vw);
     gap:10rem;
+    padding-bottom:5rem;
   }
   .showcase-wrapper:hover .showcase-video{
     opacity: 1;
