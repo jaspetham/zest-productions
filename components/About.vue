@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section id="about">
     <div id="aboutMessage" class="my-10 mx-auto text-center font-black uppercase opacity-0 content-p" style="max-width:120ch;transform:translateY(-100%)">
       <span class="fs-400 ff-title">Whether it's media production, or media management... be it for <span class="text-main">personal</span> use or for your <span class="text-main">business</span> - we are here for exactly for that very reason.</span>
     </div>

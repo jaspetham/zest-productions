@@ -81,9 +81,8 @@
     transition: all .5s ease-in;
   }
   nav.isScroll{
-    background:rgba(0,0,0,.5);
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
+    background:rgba(0,0,0,.95);
+    box-shadow: 0 2px 25px rgba(var(--clr-main),.95);
   }
   .nav-container{
     position: relative;
