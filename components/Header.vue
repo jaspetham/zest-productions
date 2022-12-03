@@ -81,8 +81,8 @@
     transition: all .5s ease-in;
   }
   nav.isScroll{
-    background:rgba(0,0,0,.95);
-    box-shadow: 0 2px 25px rgba(var(--clr-main),.95);
+    background:rgba(0,0,0,.98);
+    box-shadow: 0 2px 25px rgba(var(--clr-main),.96);
   }
   .nav-container{
     position: relative;

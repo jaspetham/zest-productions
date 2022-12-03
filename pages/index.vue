@@ -1,5 +1,6 @@
 <template>
   <div id="main">
+    <Loading/>
     <Header/>
     <Canvas/>
     <About/>
