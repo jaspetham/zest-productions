@@ -16,11 +16,11 @@
         :class="this.menuOpen ? 'active' : ''"
         class="menu-items">
         <div class="menu-body">
-          <div class="header-link"><a href="#">Home <span> <font-awesome-icon class="header-icon" :icon="['far', 'compass']"/></span></a></div>
-          <div class="header-link"><a href="#">about <span> <font-awesome-icon class="header-icon" :icon="['far', 'compass']"/></span></a></div>
-          <div class="header-link"><a href="#">blogs <span> <font-awesome-icon class="header-icon" :icon="['far', 'compass']"/></span></a></div>
-          <div class="header-link"><a href="#">portfolio <span> <font-awesome-icon class="header-icon" :icon="['far', 'compass']"/></span></a></div>
-          <div class="header-link"><a href="#">contact <span> <font-awesome-icon class="header-icon" :icon="['far', 'compass']"/></span></a></div>
+          <div class="header-link"><a href="#"> Home <font-awesome-icon class="header-icon" :icon="['far', 'compass']"/></span></a></div>
+          <div class="header-link"><a href="#"> About <font-awesome-icon class="header-icon" :icon="['far', 'compass']"/></span></a></div>
+          <div class="header-link"><a href="#"> Services <font-awesome-icon class="header-icon" :icon="['far', 'compass']"/></span></a></div>
+          <div class="header-link"><a href="#"> Showcase <font-awesome-icon class="header-icon" :icon="['far', 'compass']"/></span></a></div>
+          <div class="header-link"><a href="#"> Contact <font-awesome-icon class="header-icon" :icon="['far', 'compass']"/></span></a></div>
         </div>
         <div class="menu-footer">
           <a href="https://wa.me/+601110259170" target="_blank" class="fs-400"> <font-awesome-icon :icon="['fab', 'whatsapp']" /> 011 - 1025 9170</a>
@@ -172,10 +172,11 @@
     overflow: hidden;
   }
   .header-link > a{
+    font-family: var(--ff-glitch);
     display: flex;
     align-content: center;
     gap:1.5rem;
-    font-weight: 900;
+    font-weight: 400;
     font-size: var(--fs-700);
     line-height: .45em;
     text-transform: uppercase;

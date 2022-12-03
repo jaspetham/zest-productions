@@ -25,7 +25,7 @@
       var active_li_index = 0;
 
       setInterval(function(){
-        var active_li = document.querySelector('.glitch.active');
+        var active_li = document.querySelector('#container .glitch.active');
 
         if( lis.indexOf(active_li) == lis_count-1 )
           active_li_index  = 0;
@@ -33,7 +33,7 @@
           active_li_index++;
 
         active_li.classList.remove('active');
-        document.querySelectorAll('.glitch')[active_li_index].classList.add('active');
+        document.querySelectorAll('#container .glitch')[active_li_index].classList.add('active');
       }, 3000);
       class Sketch {
         constructor(options) {

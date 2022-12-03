@@ -1,5 +1,6 @@
 .glitch {
   color: white;
+  font-family: var(--ff-glitch);
   font-size: var(--fs-800);
   position: relative;
   display: flex;
@@ -10,7 +11,7 @@
   transition: opacity .1s linear, transform .25s linear;
 }
 
-.glitch.active{
+#container .glitch.active, #nav .glitch{
   opacity: 1;
   width: auto;
   height: auto;
