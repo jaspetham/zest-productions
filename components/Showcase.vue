@@ -30,14 +30,11 @@
       </div>
       <div class="showcases flex flex-col content-p">
         <div
-          @mouseover="clickVideo(index);"
-          @mouseleave="stopVideo(index)"
           class="showcase"
           :class="(index%2 === 1) ? 'even' : ''"
           v-for="(showcase,index) in showcases"
           :key="index">
           <a>
-            <div :id="('invi-'+index)" class="d-none" @click="showcaseVideo(index)"></div>
             <figure class="showcase-wrapper">
                 <div class="w-full h-full">
                   <img class="showcase-img" :src="showcase.image" :alt="showcase.name">
@@ -46,6 +43,14 @@
                 <div class="showcase-detail flex justify-between items-center">
                   <span>{{showcase.name}}</span>
                   <span>{{showcase.type}}</span>
+                </div>
+                <div class="play-area">
+                  <div :id="('play-'+index)" class="area-icon active" @click="showcaseVideo(index)">
+                    <font-awesome-icon :icon="['far', 'circle-play']"/>
+                  </div>
+                  <div :id="('stop-'+index)" class="area-icon" @click="stopVideo(index)">
+                    <font-awesome-icon :icon="['far', 'circle-pause']"/>
+                  </div>
                 </div>
             </figure>
           </a>
@@ -120,17 +125,20 @@
     methods:{
       showcaseVideo(id){
         const video = document.querySelector(`.showcase-video[data-showcase-video="${id}"]`);
-        document.querySelector('.showcases').click();
-        video.pause();
-        video.currenTime = 0;
-        video.load();
+        const playIcon = document.getElementById('play-'+id);
+        const stopIcon = document.getElementById('stop-'+id);
+        playIcon.classList.remove('active');
+        stopIcon.classList.add('active');
+        video.classList.add('active');
         video.play();
-      },
-      clickVideo(id){
-        document.getElementById(`invi-${id}`).click();
       },
       stopVideo(id){
         const video = document.querySelector(`.showcase-video[data-showcase-video="${id}"]`);
+        const playIcon = document.getElementById('play-'+id);
+        const stopIcon = document.getElementById('stop-'+id);
+        playIcon.classList.add('active');
+        stopIcon.classList.remove('active');
+        video.classList.remove('active');
         video.pause();
       }
     }
@@ -191,21 +199,46 @@
     gap:10rem;
     padding-bottom:5rem;
   }
-  .showcase-wrapper:hover .showcase-video{
-    opacity: 1;
+  .play-area{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    opacity:0;
+    font-size: var(--fs-800);
   }
+  .play-area .area-icon{
+    display:none;
+    cursor:pointer;
+  }
+  .play-area .area-icon.active{
+    display:block;
+  }
+
   .showcase-video{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background:rgba(var(--clr-main),.8);
-    backdrop-filter: blur(15px);
     object-fit: contain;
     z-index: 10;
     opacity: 0;
     transition: opacity .15s ease-in;
+    background:rgba(var(--clr-main),.8);
+    backdrop-filter: blur(15px);
+  }
+
+  .showcase-wrapper:hover .play-area{
+    opacity: 1;
+  }
+  .showcase-video.active{
+    opacity: 1;
   }
   .showcase-detail{
     padding:1rem 0;

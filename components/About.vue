@@ -218,6 +218,7 @@
   .play-icon span{
     min-width: 5.5ch;
     text-align: center;
+    line-height: 1;
   }
   @media (min-width: 640px){
     .aspect-ratio{
