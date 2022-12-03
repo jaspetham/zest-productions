@@ -3,40 +3,41 @@
       <div class="scroll-thing-wrapper">
         <section class="scroll-thing hidden lg:block">
           <div id="row" class="row text-main">
-            <h2 class="scroll-text">Showcase / Showcase / Showcase / Showcase / Showcase / Showcase / Showcase / </h2>
-            <h2 class="scroll-text">Showcase / Showcase / Showcase / Showcase / Showcase / Showcase / Showcase / </h2>
-            <h2 class="scroll-text">Showcase / Showcase / Showcase / Showcase / Showcase / Showcase / Showcase / </h2>
+            <span class="scroll-text">Showcase / Showcase / Showcase / Showcase / Showcase / Showcase / Showcase / </span>
+            <span class="scroll-text">Showcase / Showcase / Showcase / Showcase / Showcase / Showcase / Showcase / </span>
+            <span class="scroll-text">Showcase / Showcase / Showcase / Showcase / Showcase / Showcase / Showcase / </span>
           </div>
           <div id="row-reverse" class="row">
-            <h2 class="scroll-text">Jengs Homemade Brownies / BoBo Restaurant & Cafe / V Beauty Cosmetics / Cinnamonkins / </h2>
-            <h2 class="scroll-text">Jengs Homemade Brownies / BoBo Restaurant & Cafe / V Beauty Cosmetics / Cinnamonkins / </h2>
-            <h2 class="scroll-text">Jengs Homemade Brownies / BoBo Restaurant & Cafe / V Beauty Cosmetics / Cinnamonkins / </h2>
+            <span class="scroll-text">Jengs Homemade Brownies / BoBo Restaurant & Cafe / V Beauty Cosmetics / Cinnamonkins / </span>
+            <span class="scroll-text">Jengs Homemade Brownies / BoBo Restaurant & Cafe / V Beauty Cosmetics / Cinnamonkins / </span>
+            <span class="scroll-text">Jengs Homemade Brownies / BoBo Restaurant & Cafe / V Beauty Cosmetics / Cinnamonkins / </span>
           </div>
         </section>
         <section class="lg:hidden scroll-thing mobile">
           <div class="marquee-container">
             <div class="marquee text-main" style="--play:running; --direction:normal; --duration:60s; --delay:0s; --iteration-count:infinite;">
-              <h2 class="scroll-text">Showcase / Showcase / Showcase / Showcase / Showcase / Showcase / Showcase</h2>
-              <h2 class="scroll-text">Showcase / Showcase / Showcase / Showcase / Showcase / Showcase / Showcase</h2>
+              <span class="scroll-text">Showcase / Showcase / Showcase / Showcase / Showcase / Showcase / Showcase</span>
+              <span class="scroll-text">Showcase / Showcase / Showcase / Showcase / Showcase / Showcase / Showcase</span>
             </div>
           </div>
           <div class="marquee-container">
             <div class="marquee reverse" style="--play:running; --direction:reverse; --duration:60s; --delay:0s; --iteration-count:infinite;">
-              <h2 class="scroll-text">Jengs Homemade Brownies / BoBo Restaurant & Cafe / V Beauty Cosmetics / Cinnamonkins / </h2>
-              <h2 class="scroll-text">Jengs Homemade Brownies / BoBo Restaurant & Cafe / V Beauty Cosmetics / Cinnamonkins / </h2>
+              <span class="scroll-text">Jengs Homemade Brownies / BoBo Restaurant & Cafe / V Beauty Cosmetics / Cinnamonkins / </span>
+              <span class="scroll-text">Jengs Homemade Brownies / BoBo Restaurant & Cafe / V Beauty Cosmetics / Cinnamonkins / </span>
             </div>
           </div>
         </section>
       </div>
       <div class="showcases flex flex-col content-p">
         <div
-          @mouseover="showcaseVideo(index)"
+          @mouseover="clickVideo(index);"
           @mouseleave="stopVideo(index)"
           class="showcase"
           :class="(index%2 === 1) ? 'even' : ''"
           v-for="(showcase,index) in showcases"
           :key="index">
           <a>
+            <div :id="('invi-'+index)" class="d-none" @click="showcaseVideo(index)"></div>
             <figure class="showcase-wrapper">
                 <div class="w-full h-full">
                   <img class="showcase-img" :src="showcase.image" :alt="showcase.name">
@@ -119,10 +120,14 @@
     methods:{
       showcaseVideo(id){
         const video = document.querySelector(`.showcase-video[data-showcase-video="${id}"]`);
+        document.querySelector('.showcases').click();
         video.pause();
         video.currenTime = 0;
         video.load();
         video.play();
+      },
+      clickVideo(id){
+        document.getElementById(`invi-${id}`).click();
       },
       stopVideo(id){
         const video = document.querySelector(`.showcase-video[data-showcase-video="${id}"]`);
@@ -151,18 +156,19 @@
     position:fixed;
   }
   .scroll-text{
+    line-height:1;
+    font-family: var(--ff-special);
     white-space: nowrap;
     font-size: max(55px,5.2083333333vw)!important;
-    text-transform: uppercase;
     font-weight: 900;
   }
   #row-reverse{
     transform: rotate(360deg) scaleX(-1);
   }
-  #row-reverse > h2{
+  #row-reverse > .scroll-text{
     transform: rotate(360deg) scaleX(-1);
   }
-  #row-reverse > h2,.marquee.reverse{
+  #row-reverse > .scroll-text,.marquee.reverse{
     color:rgba(var(--clr-dark-light),.8);
   }
   .showcase-wrapper{

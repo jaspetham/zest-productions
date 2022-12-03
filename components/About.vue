@@ -1,15 +1,15 @@
 <template>
   <section>
-    <div id="aboutMessage" class="my-10 mx-auto text-center uppercase font-bold opacity-0 content-p" style="max-width:120ch;transform:translateY(-100%)">
-      <span class="fs-400">Whether it's media production, or media management... be it for <span class="text-main">personal</span> use or for your <span class="text-main">business</span> - we are here for exactly for that very reason.</span>
+    <div id="aboutMessage" class="my-10 mx-auto text-center font-black uppercase opacity-0 content-p" style="max-width:120ch;transform:translateY(-100%)">
+      <span class="fs-400 ff-title">Whether it's media production, or media management... be it for <span class="text-main">personal</span> use or for your <span class="text-main">business</span> - we are here for exactly for that very reason.</span>
     </div>
     <div class="my-10 p-10" id="divider"></div>
     <div id="aboutSection" class="relative content-p mt-15">
       <div>
-        <span class="fs-500 about-text">
+        <h1 class="fs-500 about-text">
           We're a <span class="text-main">media</span> studio with a committed <span class="text-main">team</span> working on projects for startups and companies, we make your idea into a reality through:
           <span class="inner-text">branding & visual design of the highest <span class="text-main">quality</span>.</span>
-        </span>
+        </h1>
         <div class="video-control">
           <div class="control">
             <div @click="runVideo" id="magnetic-wrap">

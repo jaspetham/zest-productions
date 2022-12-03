@@ -16,11 +16,11 @@
         :class="this.menuOpen ? 'active' : ''"
         class="menu-items">
         <div class="menu-body">
-          <div class="header-link"><a href="#"> Home <font-awesome-icon class="header-icon" :icon="['far', 'compass']"/></span></a></div>
-          <div class="header-link"><a href="#"> About <font-awesome-icon class="header-icon" :icon="['far', 'compass']"/></span></a></div>
-          <div class="header-link"><a href="#"> Services <font-awesome-icon class="header-icon" :icon="['far', 'compass']"/></span></a></div>
-          <div class="header-link"><a href="#"> Showcase <font-awesome-icon class="header-icon" :icon="['far', 'compass']"/></span></a></div>
-          <div class="header-link"><a href="#"> Contact <font-awesome-icon class="header-icon" :icon="['far', 'compass']"/></span></a></div>
+          <div class="header-link"><a href="#"> Home <font-awesome-icon class="header-icon" :icon="['far', 'compass']"/></a></div>
+          <div class="header-link"><a href="#"> About <font-awesome-icon class="header-icon" :icon="['far', 'compass']"/></a></div>
+          <div class="header-link"><a href="#"> Services <font-awesome-icon class="header-icon" :icon="['far', 'compass']"/></a></div>
+          <div class="header-link"><a href="#"> Showcase <font-awesome-icon class="header-icon" :icon="['far', 'compass']"/></a></div>
+          <div class="header-link"><a href="#"> Contact <font-awesome-icon class="header-icon" :icon="['far', 'compass']"/></a></div>
         </div>
         <div class="menu-footer">
           <a href="https://wa.me/+601110259170" target="_blank" class="fs-400"> <font-awesome-icon :icon="['fab', 'whatsapp']" /> 011 - 1025 9170</a>
@@ -220,6 +220,7 @@
     opacity: 1;
   }
   .menu-footer > a{
+    font-family: var(--ff-title);
     width:fit-content;
   }
   /* mobile size */

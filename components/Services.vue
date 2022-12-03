@@ -1,7 +1,7 @@
 <template>
   <section id="services" class="section-split">
     <div class="mb-20 content-p">
-      <span class="fs-600 flex justify-center font-black uppercase text-center mb-10">Ser<span class="text-main">v</span>ices</span>
+      <h1 class="fs-600 flex justify-center ff-special text-center mb-10">S<span class="text-main">e</span>rvic<span class="text-main">e</span>s</h1>
       <div class="services">
         <div
           class="service-wrapper relative"
@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="section-split">
-      <span class="fs-600 flex justify-center font-black uppercase text-center">Lo<span class="text-main">g</span>os Sa<span class="text-main">m</span>ples</span>
+      <h1 class="fs-600 flex justify-center ff-special text-center">Logos Sampl<span class="text-main">e</span>s</h1>
       <div class="marquee-container mt-10">
         <div class="marquee" style="--play:running; --direction:normal; --duration:30s; --delay:0s; --iteration-count:infinite;">
           <span class="marquee-item" v-for="(sample,index) in samples" :key="index">

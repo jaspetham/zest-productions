@@ -1,7 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
 @font-face {
   font-family: "Hacked";
   src: url(~/assets/fonts/hacked/Hacked-KerX.ttf);
+}
+@font-face {
+  font-family: "Groupe";
+  src: url(~/assets/fonts/groupe/groupe.otf);
 }
 body {
   overscroll-behavior: none;
@@ -10,6 +14,7 @@ body {
   box-sizing: border-box;
   background:black;
   color: white;
+  font-family: var(--ff-title);
 }
 
 * {
@@ -61,9 +66,9 @@ div{
   --fs-200: 14px;
 
   /* font-families */
-  --ff-serif: "Bellefair", serif;
+  --ff-special: "Groupe";
   --ff-glitch: 'Hacked';
-
+  --ff-title:'Josefin Sans', sans-serif;
 }
 .content-p {
   padding: 0 3rem;
@@ -74,6 +79,13 @@ div{
   max-width: 100vw;
   width: 100%;
   overflow:hidden;
+}
+h1,h2,h3,h4,h5,h6,.ff-title{
+  font-family: var(--ff-title);
+  font-weight: 900;
+}
+.ff-special{
+  font-family: var(--ff-special)!important;
 }
 /* mobile size */
 @media (max-width: 44em) {
