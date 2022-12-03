@@ -91,24 +91,9 @@
         rowReverse.style.transform = `translateX(${window.scrollY}px) rotate(360deg) scaleX(-1)`;
         row.style.transform = `translateX(-${window.scrollY}px)`;
 
-        // get amount of children in row
-        const children = row.children.length;
-
-
-        const childrenArray = Array.from(row.children);
-        const childrenArrayReverse = Array.from(rowReverse.children);
-        const lastChild = childrenArray[children - 1].getBoundingClientRect().right;
-        const windowWidth = window.innerWidth;
-
-        // if (lastChild < windowWidth) {
-        //     childrenArray.forEach((child) => {
-        //       // row.appendChild(child.cloneNode(true));
-        //     });
-        //     childrenArrayReverse.forEach((child) => {
-        //       // rowReverse.appendChild(child.cloneNode(true));
-        //     });
-        // }
         var elementTarget = document.querySelector(".scroll-thing-wrapper");
+        var elementStop = document.querySelector('section#gallery');
+        var sectionHeight = document.querySelector('section#showcase').offsetHeight;
         if (window.scrollY > (elementTarget.offsetTop - (headerHeight + 20))) {
           document.querySelector('.scroll-thing').classList.add('stick');
           document.querySelector('.scroll-thing').style.top = (headerHeight + 20) + 'px';
@@ -119,6 +104,17 @@
           document.querySelector('.scroll-thing').style.top = 0;
           document.querySelector('.scroll-thing.mobile').classList.remove('stick');
           document.querySelector('.scroll-thing.mobile').style.top = 0;
+        }
+        if (window.scrollY > (elementStop.offsetTop - (headerHeight + 20) - 120 - 120 - 120)) {
+          document.querySelector('.scroll-thing').style.transform = `translate(0,${(sectionHeight - 240)}px)`;
+          document.querySelector('.scroll-thing').classList.remove('stick');
+          document.querySelector('.scroll-thing.mobile').style.transform = `translate(0,${(sectionHeight - 240)}px)`;
+          document.querySelector('.scroll-thing.mobile').classList.remove('stick');
+        }else if(window.scrollY > (elementTarget.offsetTop - (headerHeight + 20))){
+          document.querySelector('.scroll-thing').style.transform = `translate(0,0)`;
+          document.querySelector('.scroll-thing').classList.add('stick');
+          document.querySelector('.scroll-thing.mobile').style.transform = `translate(0,0)`;
+          document.querySelector('.scroll-thing.mobile').classList.add('stick');
         }
       }});
     },

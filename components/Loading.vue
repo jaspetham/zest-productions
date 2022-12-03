@@ -23,7 +23,7 @@
           this.loading = false;
           this.removeLoading();
           document.querySelector('body').style.overflowY = 'auto';
-        },5000)
+        },3500)
       },
       removeLoading(){
         setTimeout(()=>{
@@ -36,7 +36,7 @@
 
 <style lang="scss" scoped>
   .loading-wrapper{
-    position: absolute;
+    position: fixed;
     top:0;
     left:0;
     width:100%;

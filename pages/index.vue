@@ -6,7 +6,7 @@
     <About/>
     <Services/>
     <Showcase/>
-    <Specialty/>
+    <Gallery/>
   </div>
 </template>
 

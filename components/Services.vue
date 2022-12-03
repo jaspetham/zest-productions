@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="section-split">
-      <h1 class="fs-600 flex justify-center ff-special text-center">Logos Sampl<span class="text-main">e</span>s</h1>
+      <h1 class="fs-600 flex justify-center ff-special text-center">L<span class="text-main">o</span>g<span class="text-main">o</span>s S<span class="text-main">a</span>mpl<span class="text-main">e</span>s</h1>
       <div class="marquee-container mt-10">
         <div class="marquee" style="--play:running; --direction:normal; --duration:30s; --delay:0s; --iteration-count:infinite;">
           <span class="marquee-item" v-for="(sample,index) in samples" :key="index">

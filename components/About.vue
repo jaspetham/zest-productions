@@ -1,9 +1,11 @@
 <template>
-  <section id="about">
+  <section id="about" class="section-split">
     <div id="aboutMessage" class="my-10 mx-auto text-center font-black uppercase opacity-0 content-p" style="max-width:120ch;transform:translateY(-100%)">
       <span class="fs-400 ff-title">Whether it's media production, or media management... be it for <span class="text-main">personal</span> use or for your <span class="text-main">business</span> - we are here for exactly for that very reason.</span>
     </div>
-    <div class="my-10 p-10" id="divider"></div>
+    <div class="my-10 p-10" id="divider">
+      <h1 class="fs-600 flex justify-center ff-special text-center mb-10">A<span class="text-main">b</span>o<span class="text-main">u</span>t <span class="text-main">U</span>s</h1>
+    </div>
     <div id="aboutSection" class="relative content-p mt-15">
       <div>
         <h1 class="fs-500 about-text">
