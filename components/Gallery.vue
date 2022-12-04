@@ -23,7 +23,7 @@
           </div>
           <div class="images-wrapper" data-gallery="1">
             <div class="images-grid">
-              <div v-for="(image,index) in galleryFood" :key="index" class="gallery-img-wrapper">
+              <div v-for="(image,index) in galleryOpt1" :key="index" class="gallery-img-wrapper">
                 <div class="img-info">{{image.title}}</div>
                 <img :src="image.imageSrc" :alt="image.title">
               </div>
@@ -31,7 +31,7 @@
           </div>
           <div class="images-wrapper" data-gallery="2">
             <div class="images-grid">
-              <div v-for="(image,index) in galleryWine" :key="index" class="gallery-img-wrapper">
+              <div v-for="(image,index) in galleryOpt2" :key="index" class="gallery-img-wrapper">
                 <div class="img-info">{{image.title}}</div>
                 <img :src="image.imageSrc" :alt="image.title">
               </div>
@@ -44,43 +44,254 @@
 </template>
 
 <script>
-  import galleryImg1 from "~/assets/images/showcase/1/image.jpg"
-  import galleryImg2 from "~/assets/images/showcase/2/image.jpg"
+  import work1 from "~/assets/images/works/work1.jpg"
+  import work2 from "~/assets/images/works/work2.jpg"
+  import work3 from "~/assets/images/works/work3.jpg"
+  import work4 from "~/assets/images/works/work4.jpg"
+  import work5 from "~/assets/images/works/work5.jpg"
+  import work6 from "~/assets/images/works/work6.jpg"
+  import work7 from "~/assets/images/works/work7.jpg"
+  import work8 from "~/assets/images/works/work8.jpg"
+  import work9 from "~/assets/images/works/work9.jpg"
+  import work10 from "~/assets/images/works/work10.jpg"
+  import work11 from "~/assets/images/works/work11.jpg"
+  import work12 from "~/assets/images/works/work12.jpg"
+  import work13 from "~/assets/images/works/work13.jpg"
+  import work14 from "~/assets/images/works/work14.jpg"
+  import work15 from "~/assets/images/works/work15.jpg"
+  import work16 from "~/assets/images/works/work16.jpg"
+  import work17 from "~/assets/images/works/work17.jpg"
+  import work18 from "~/assets/images/works/work18.jpg"
+  import work19 from "~/assets/images/works/work19.jpg"
+  import work20 from "~/assets/images/works/work20.jpg"
+  import work21 from "~/assets/images/works/work21.jpg"
+  import work22 from "~/assets/images/works/work22.jpg"
+  import work23 from "~/assets/images/works/work23.jpg"
+  import work24 from "~/assets/images/works/work24.jpg"
+  import work25 from "~/assets/images/works/work25.jpg"
+  import work26 from "~/assets/images/works/work26.jpg"
+  import work27 from "~/assets/images/works/work27.jpg"
+  import work28 from "~/assets/images/works/work28.jpg"
+  import work29 from "~/assets/images/works/work29.jpg"
+  import work30 from "~/assets/images/works/work30.jpg"
+  import work31 from "~/assets/images/works/work31.jpg"
+  import work32 from "~/assets/images/works/work32.jpg"
+
   export default {
     data(){
       return{
         galleryAll:[
           {
-            imageSrc:galleryImg1,
+            imageSrc:work1,
             title:"Burger Pic"
           },
           {
-            imageSrc:galleryImg1,
+            imageSrc:work2,
             title:"Burger Pic"
           },
           {
-            imageSrc:galleryImg1,
+            imageSrc:work3,
             title:"Burger Pic"
           },
           {
-            imageSrc:galleryImg1,
+            imageSrc:work4,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work5,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work6,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work7,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work8,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work9,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work10,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work11,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work12,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work13,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work14,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work15,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work16,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work17,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work18,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work19,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work20,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work21,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work22,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work23,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work25,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work26,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work27,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work28,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work29,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work30,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work31,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work32,
             title:"Burger Pic"
           },
         ],
-        galleryFood:[
+        galleryOpt1:[
           {
-            imageSrc:galleryImg1,
+            imageSrc:work21,
             title:"Burger Pic"
           },
           {
-            imageSrc:galleryImg2,
-            title:"Hotel Pic"
+            imageSrc:work22,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work23,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work25,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work26,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work27,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work28,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work29,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work30,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work31,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work32,
+            title:"Burger Pic"
           },
         ],
-        galleryWine:[
+        galleryOpt2:[
           {
-            imageSrc:galleryImg2,
-            title:"Hotel Pic"
+            imageSrc:work11,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work12,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work13,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work14,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work15,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work16,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work17,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work18,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work19,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work20,
+            title:"Burger Pic"
           },
         ],
       }
