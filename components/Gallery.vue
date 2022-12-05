@@ -3,7 +3,7 @@
     <div class="content-p">
       <h1 class="fs-600 flex justify-center ff-special text-center mb-5">G<span class="text-main">a</span>ll<span class="text-main">e</span>ry</h1>
       <div class="info">
-        <h1 class="fs-600 uppercase">We specialise in brand personalization.</h1>
+        <h1 class="fs-500 uppercase">We specialise in brand personalization.</h1>
         <p class="fs-400 info-text">We want to ensure that the pictures and videos we take, will reflect the unique identity your brand portrays. Delivering specific context to your digital presence.</p>
       </div>
       <div class="gallery-wrapper my-20">
@@ -344,7 +344,7 @@
     gap:3rem;
   }
   .gallery{
-    margin-top: 60px;
+    margin-top: 75px;
   }
   .gallery-img-wrapper{
     width: 100%;
