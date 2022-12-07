@@ -39,14 +39,14 @@
 </template>
 
 <script>
-  import sample1 from '~/assets/images/logo-samples/sample1.png'
-  import sample2 from '~/assets/images/logo-samples/sample2.png'
-  import sample3 from '~/assets/images/logo-samples/sample3.png'
-  import sample4 from '~/assets/images/logo-samples/sample4.png'
-  import sample5 from '~/assets/images/logo-samples/sample5.png'
-  import sample6 from '~/assets/images/logo-samples/sample6.png'
-  import sample7 from '~/assets/images/logo-samples/sample7.png'
-  import sample8 from '~/assets/images/logo-samples/sample8.png'
+  const sample1 = '/images/logo-samples/sample1.png'
+  const sample2 = '/images/logo-samples/sample2.png'
+  const sample3 = '/images/logo-samples/sample3.png'
+  const sample4 = '/images/logo-samples/sample4.png'
+  const sample5 = '/images/logo-samples/sample5.png'
+  const sample6 = '/images/logo-samples/sample6.png'
+  const sample7 = '/images/logo-samples/sample7.png'
+  const sample8 = '/images/logo-samples/sample8.png'
   export default {
     data(){
       return{

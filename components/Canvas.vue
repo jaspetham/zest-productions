@@ -7,7 +7,7 @@
           <div class="glitch" data-text="Social Media">Social Media</div>
         </div>
     </div>
-    <video id="video" src="~/assets/video/test.mp4" muted playsinline></video>
+    <video id="video" src="/video/test.mp4" muted playsinline></video>
   </div>
 </template>
 <script>

@@ -2,7 +2,7 @@
   <nav id="nav">
     <div class="nav-container flex justify-between items-center">
       <div class="nav-img">
-        <img src="~/assets/images/logo.png" alt="" width="60" height="60">
+        <img src="/images/logo.png" alt="" width="60" height="60">
       </div>
       <div
         @click="menuState"

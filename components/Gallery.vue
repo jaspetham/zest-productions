@@ -44,39 +44,39 @@
 </template>
 
 <script>
-  import work1 from "~/assets/images/works/work1.jpg"
-  import work2 from "~/assets/images/works/work2.jpg"
-  import work3 from "~/assets/images/works/work3.jpg"
-  import work4 from "~/assets/images/works/work4.jpg"
-  import work5 from "~/assets/images/works/work5.jpg"
-  import work6 from "~/assets/images/works/work6.jpg"
-  import work7 from "~/assets/images/works/work7.jpg"
-  import work8 from "~/assets/images/works/work8.jpg"
-  import work9 from "~/assets/images/works/work9.jpg"
-  import work10 from "~/assets/images/works/work10.jpg"
-  import work11 from "~/assets/images/works/work11.jpg"
-  import work12 from "~/assets/images/works/work12.jpg"
-  import work13 from "~/assets/images/works/work13.jpg"
-  import work14 from "~/assets/images/works/work14.jpg"
-  import work15 from "~/assets/images/works/work15.jpg"
-  import work16 from "~/assets/images/works/work16.jpg"
-  import work17 from "~/assets/images/works/work17.jpg"
-  import work18 from "~/assets/images/works/work18.jpg"
-  import work19 from "~/assets/images/works/work19.jpg"
-  import work20 from "~/assets/images/works/work20.jpg"
-  import work21 from "~/assets/images/works/work21.jpg"
-  import work22 from "~/assets/images/works/work22.jpg"
-  import work23 from "~/assets/images/works/work23.jpg"
-  import work24 from "~/assets/images/works/work24.jpg"
-  import work25 from "~/assets/images/works/work25.jpg"
-  import work26 from "~/assets/images/works/work26.jpg"
-  import work27 from "~/assets/images/works/work27.jpg"
-  import work28 from "~/assets/images/works/work28.jpg"
-  import work29 from "~/assets/images/works/work29.jpg"
-  import work30 from "~/assets/images/works/work30.jpg"
-  import work31 from "~/assets/images/works/work31.jpg"
-  import work32 from "~/assets/images/works/work32.jpg"
-  import work33 from "~/assets/images/works/work33.jpg"
+  const work1 = "/images/works/work1.jpg"
+  const work2 = "/images/works/work2.jpg"
+  const work3 = "/images/works/work3.jpg"
+  const work4 = "/images/works/work4.jpg"
+  const work5 = "/images/works/work5.jpg"
+  const work6 = "/images/works/work6.jpg"
+  const work7 = "/images/works/work7.jpg"
+  const work8 = "/images/works/work8.jpg"
+  const work9 = "/images/works/work9.jpg"
+  const work10 = "/images/works/work10.jpg"
+  const work11 = "/images/works/work11.jpg"
+  const work12 = "/images/works/work12.jpg"
+  const work13 = "/images/works/work13.jpg"
+  const work14 = "/images/works/work14.jpg"
+  const work15 = "/images/works/work15.jpg"
+  const work16 = "/images/works/work16.jpg"
+  const work17 = "/images/works/work17.jpg"
+  const work18 = "/images/works/work18.jpg"
+  const work19 = "/images/works/work19.jpg"
+  const work20 = "/images/works/work20.jpg"
+  const work21 = "/images/works/work21.jpg"
+  const work22 = "/images/works/work22.jpg"
+  const work23 = "/images/works/work23.jpg"
+  const work24 = "/images/works/work24.jpg"
+  const work25 = "/images/works/work25.jpg"
+  const work26 = "/images/works/work26.jpg"
+  const work27 = "/images/works/work27.jpg"
+  const work28 = "/images/works/work28.jpg"
+  const work29 = "/images/works/work29.jpg"
+  const work30 = "/images/works/work30.jpg"
+  const work31 = "/images/works/work31.jpg"
+  const work32 = "/images/works/work32.jpg"
+  const work33 = "/images/works/work33.jpg"
 
   export default {
     data(){
@@ -172,6 +172,10 @@
           },
           {
             imageSrc:work23,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work24,
             title:"Burger Pic"
           },
           {

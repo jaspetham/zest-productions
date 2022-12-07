@@ -35,7 +35,7 @@
       <div class="aspect-ratio">
         <div class="relative w-full h-full">
           <div class="about-vid-wrapper">
-            <video class="about-video" playsinline src="~/assets/video/zest.mp4"></video>
+            <video class="about-video" playsinline src="/video/zest.mp4"></video>
           </div>
         </div>
       </div>

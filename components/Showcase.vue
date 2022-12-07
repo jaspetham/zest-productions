@@ -60,10 +60,10 @@
 </template>
 
 <script>
-  import showcase1Img from '~/assets/images/showcase/1/image.jpg';
-  import showcase1Vid from '~/assets/images/showcase/1/video.mp4';
-  import showcase2Img from '~/assets/images/showcase/2/image.jpg';
-  import showcase2Vid from '~/assets/images/showcase/2/video.mp4';
+  const showcase1Img = '/images/showcase/1/image.jpg';
+  const showcase1Vid = '/images/showcase/1/video.mp4';
+  const showcase2Img = '/images/showcase/2/image.jpg';
+  const showcase2Vid = '/images/showcase/2/video.mp4';
   export default {
     data(){
       return{
