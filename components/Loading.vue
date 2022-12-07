@@ -18,9 +18,9 @@ import load from 'load-asset';
         isDone:false
       }
     },
-    mounted(){
-      this.loadAssets();
+    async mounted(){
       this.dots();
+      await this.loadAssets();
       this.loadingState();
     },
     methods:{
@@ -78,10 +78,8 @@ import load from 'load-asset';
         ];
         const items = await load.all(urls,ev=>{
           if(ev.progress = 1){
-            this.loadingState
           }
         });
-        console.log(items);
       },
       dots(){
         let $ = (e) => document.querySelector(e);
