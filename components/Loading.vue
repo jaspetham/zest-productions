@@ -104,10 +104,8 @@ import load from 'load-asset';
         animate(dots, "dots--animate");
       },
       loadingState(){
-        setTimeout(()=>{
-          this.loading = false;
-          this.removeLoading();
-        },3500)
+        this.loading = false;
+        this.removeLoading();
       },
       removeLoading(){
         setTimeout(()=>{
