@@ -7,7 +7,7 @@
       <h1 class="fs-600 flex justify-center ff-special text-center mb-10">A<span class="text-main">b</span>o<span class="text-main">u</span>t <span class="text-main">U</span>s</h1>
     </div>
     <div id="aboutSection" class="relative content-p mt-15">
-      <div>
+      <div class="relative z-10">
         <h1 class="fs-500 about-text">
           We're a <span class="text-main">media</span> studio with a committed <span class="text-main">team</span> working on projects for startups and companies, we make your idea into a reality through:
           <span class="inner-text">branding & visual design of the highest <span class="text-main">quality</span>.</span>
@@ -116,15 +116,29 @@
           duration: 0.6
         });
       });
+      let video = document.querySelector('.about-video');
+      video.addEventListener('pause',(event)=>{
+        this.videoState = true;
+        document.querySelector('.play-icon.play').classList.add('active');
+        document.querySelector('.play-icon.pause').classList.remove('active');
+      })
+      video.addEventListener('play',(event)=>{
+        this.videoState = false;
+        document.querySelector('.play-icon.play').classList.remove('active');
+        document.querySelector('.play-icon.pause').classList.add('active');
+      })
     },
     methods: {
       runVideo(){
+        let video = document.querySelector('.about-video');
         if(this.videoState){
-          document.querySelector('.about-video').pause();
+          video.pause();
+          video.removeAttribute("controls");
           document.querySelector('.play-icon.play').classList.add('active');
           document.querySelector('.play-icon.pause').classList.remove('active');
         }else{
-          document.querySelector('.about-video').play();
+          video.play();
+          video.setAttribute("controls","controls");
           document.querySelector('.play-icon.play').classList.remove('active');
           document.querySelector('.play-icon.pause').classList.add('active');
         }
@@ -159,7 +173,7 @@
     position: relative;
     height: 42.6041666667vw;
     min-height: 352px;
-    z-index:-1;
+    z-index:2;
     overflow:hidden;
     width:100%;
   }
@@ -203,7 +217,7 @@
   .magnetic-size {
     position: absolute;
     inset:0;
-    z-index: 1; // The area has to be on top
+    z-index: 9; // The area has to be on top
     border-radius: 50%;
     // border: 2px dashed #333; // Guideline to visualize the area
   }

@@ -39,7 +39,7 @@
                 <div class="w-full h-full">
                   <img class="showcase-img" :src="showcase.image" :alt="showcase.name">
                 </div>
-                <div><video class="showcase-video" :data-showcase-video="index" :src="showcase.video"></video></div>
+                <video ref="video" class="showcase-video" :data-showcase-video="index" :src="showcase.video"></video>
                 <div class="showcase-detail flex justify-between items-center">
                   <span>{{showcase.name}}</span>
                   <span>{{showcase.type}}</span>
@@ -117,6 +117,22 @@
           document.querySelector('.scroll-thing.mobile').classList.add('stick');
         }
       }});
+      this.$refs.video.forEach((el)=>{
+        const id = el.getAttribute("data-showcase-video");
+        const playIcon = document.getElementById('play-'+id);
+        const stopIcon = document.getElementById('stop-'+id);
+        el.onpause = function(){
+          playIcon.classList.add('active');
+          stopIcon.classList.remove('active');
+          el.pause();
+          el.classList.remove('active');
+        }
+        el.onseeking = function(){
+          playIcon.classList.remove('active');
+          stopIcon.classList.add('active');
+          el.classList.add('active');
+        }
+      })
     },
     methods:{
       showcaseVideo(id){
@@ -127,6 +143,7 @@
         stopIcon.classList.add('active');
         video.classList.add('active');
         video.play();
+        video.setAttribute("controls","controls");
       },
       stopVideo(id){
         const video = document.querySelector(`.showcase-video[data-showcase-video="${id}"]`);
@@ -136,6 +153,7 @@
         stopIcon.classList.remove('active');
         video.classList.remove('active');
         video.pause();
+        video.removeAttribute("controls");
       }
     }
   }
@@ -197,10 +215,11 @@
   }
   .play-area{
     position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    width: 150px;
+    height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -232,6 +251,7 @@
 
   .showcase-wrapper:hover .play-area{
     opacity: 1;
+    z-index:20;
   }
   .showcase-video.active{
     opacity: 1;
