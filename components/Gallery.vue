@@ -76,6 +76,7 @@
   import work30 from "~/assets/images/works/work30.jpg"
   import work31 from "~/assets/images/works/work31.jpg"
   import work32 from "~/assets/images/works/work32.jpg"
+  import work33 from "~/assets/images/works/work33.jpg"
 
   export default {
     data(){
@@ -203,6 +204,10 @@
           },
           {
             imageSrc:work32,
+            title:"Burger Pic"
+          },
+          {
+            imageSrc:work33,
             title:"Burger Pic"
           },
         ],

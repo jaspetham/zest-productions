@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import load from 'load-asset';
   export default {
     data(){
       return{
@@ -18,11 +19,64 @@
       }
     },
     mounted(){
+      this.loadAssets();
       this.dots();
-      // this.loadingState();
-
+      this.loadingState();
     },
     methods:{
+      async loadAssets() {
+        // Load a list of named assets in parallel
+        const urls = [
+          '_nuxt/assets/video/test.mp4',
+          '_nuxt/assets/video/zest.mp4',
+          '_nuxt/assets/images/logo-samples/sample1.png',
+          '_nuxt/assets/images/logo-samples/sample2.png',
+          '_nuxt/assets/images/logo-samples/sample3.png',
+          '_nuxt/assets/images/logo-samples/sample4.png',
+          '_nuxt/assets/images/logo-samples/sample5.png',
+          '_nuxt/assets/images/logo-samples/sample6.png',
+          '_nuxt/assets/images/logo-samples/sample7.png',
+          '_nuxt/assets/images/logo-samples/sample8.png',
+          '_nuxt/assets/images/works/work1.jpg',
+          '_nuxt/assets/images/works/work2.jpg',
+          '_nuxt/assets/images/works/work3.jpg',
+          '_nuxt/assets/images/works/work4.jpg',
+          '_nuxt/assets/images/works/work5.jpg',
+          '_nuxt/assets/images/works/work6.jpg',
+          '_nuxt/assets/images/works/work7.jpg',
+          '_nuxt/assets/images/works/work8.jpg',
+          '_nuxt/assets/images/works/work9.jpg',
+          '_nuxt/assets/images/works/work10.jpg',
+          '_nuxt/assets/images/works/work11.jpg',
+          '_nuxt/assets/images/works/work12.jpg',
+          '_nuxt/assets/images/works/work13.jpg',
+          '_nuxt/assets/images/works/work14.jpg',
+          '_nuxt/assets/images/works/work15.jpg',
+          '_nuxt/assets/images/works/work16.jpg',
+          '_nuxt/assets/images/works/work17.jpg',
+          '_nuxt/assets/images/works/work18.jpg',
+          '_nuxt/assets/images/works/work19.jpg',
+          '_nuxt/assets/images/works/work20.jpg',
+          '_nuxt/assets/images/works/work21.jpg',
+          '_nuxt/assets/images/works/work22.jpg',
+          '_nuxt/assets/images/works/work23.jpg',
+          '_nuxt/assets/images/works/work24.jpg',
+          '_nuxt/assets/images/works/work25.jpg',
+          '_nuxt/assets/images/works/work26.jpg',
+          '_nuxt/assets/images/works/work27.jpg',
+          '_nuxt/assets/images/works/work28.jpg',
+          '_nuxt/assets/images/works/work29.jpg',
+          '_nuxt/assets/images/works/work30.jpg',
+          '_nuxt/assets/images/works/work31.jpg',
+          '_nuxt/assets/images/works/work32.jpg',
+          '_nuxt/assets/images/works/work33.jpg'
+        ];
+        await load.all(urls,ev=>{
+          if(ev.progress = 1){
+            this.loadingState
+          }
+        });
+      },
       dots(){
         let $ = (e) => document.querySelector(e);
         // Dots
@@ -46,11 +100,9 @@
         animate(dots, "dots--animate");
       },
       loadingState(){
-        setTimeout(()=>{
-          this.loading = false;
-          this.removeLoading();
-          document.querySelector('body').style.overflowY = 'auto';
-        },3500)
+        this.loading = false;
+        this.removeLoading();
+        document.querySelector('body').style.overflowY = 'auto';
       },
       removeLoading(){
         setTimeout(()=>{
