@@ -27,6 +27,7 @@ import load from 'load-asset';
       async loadAssets() {
         // Load a list of named assets in parallel
         const urls = [
+          'images/logo.png',
           '/video/test.mp4',
           '/video/zest.mp4',
           '/images/logo-samples/sample1.png',
@@ -75,11 +76,12 @@ import load from 'load-asset';
           '/images/showcase/2/image.jpg',
           '/images/showcase/2/video.mp4',
         ];
-        await load.all(urls,ev=>{
+        const items = await load.all(urls,ev=>{
           if(ev.progress = 1){
             this.loadingState
           }
         });
+        console.log(items);
       },
       dots(){
         let $ = (e) => document.querySelector(e);
@@ -104,14 +106,16 @@ import load from 'load-asset';
         animate(dots, "dots--animate");
       },
       loadingState(){
-        this.loading = false;
-        this.removeLoading();
-        document.querySelector('body').style.overflowY = 'auto';
+        setTimeout(()=>{
+          this.loading = false;
+          this.removeLoading();
+        },3500)
       },
       removeLoading(){
         setTimeout(()=>{
           this.isDone = true;
         },2000)
+        document.querySelector('body').style.overflowY = 'auto';
       }
     }
   }
