@@ -1,8 +1,11 @@
 <template>
   <div v-if="!isDone" id="loading" class="loading-wrapper" :class="this.loading ? 'active' : ''">
-    <ul>
-      <li v-for="j in 25" :key="j"></li>
-    </ul>
+    <div class="loading-img mb-5">
+      <img src="~/assets/images/logo.png" alt="" width="200" height="200">
+    </div>
+    <h1 class="fs-600">Loading
+      <div class="dots"><span class="dot z"></span><span class="dot f"></span><span class="dot s"></span><span class="dot t"><span class="dot l"></span></span></div>
+    </h1>
   </div>
 </template>
 
@@ -15,9 +18,33 @@
       }
     },
     mounted(){
-      this.loadingState();
+      this.dots();
+      // this.loadingState();
+
     },
     methods:{
+      dots(){
+        let $ = (e) => document.querySelector(e);
+        // Dots
+        // ====
+        let dots = $(".dots");
+
+        // Function
+        // ========
+        function animate(element, className) {
+          element.classList.add(className);
+          setTimeout(() => {
+            element.classList.remove(className);
+            setTimeout(() => {
+              animate(element, className);
+            }, 500);
+          }, 2500);
+        }
+
+        // Execution
+        // =========
+        animate(dots, "dots--animate");
+      },
       loadingState(){
         setTimeout(()=>{
           this.loading = false;
@@ -35,6 +62,17 @@
 </script>
 
 <style lang="scss" scoped>
+  .loading-img{
+    animation:rotate 4s linear infinite;
+  }
+  @keyframes rotate {
+    from{
+      transform: rotate(0);
+    }
+    to{
+      transform: rotate(359deg);
+    }
+  }
   .loading-wrapper{
     position: fixed;
     top:0;
@@ -55,93 +93,126 @@
     opacity: 1;
     visibility: visible;
   }
-  $color : rgb(var(--clr-main),.6);
-  @mixin obj($w,$h,$bg) {
-    width: $w;
-    height: $h;
-    background: $bg;
-  }
+.dots {
+  display: inline-flex;
 
-  @mixin anim($listName,$delay){
-    @each $currentBox in $listName {
-      $i: index($listName, $currentBox);
-      &:nth-child(#{$currentBox}) {
-        animation-delay: 0.1s * $i + $delay;
-      }
+  &--animate .dot {
+
+    &.z {
+      animation: scale .8s .2s forwards;
     }
-  }
-  .wrapper {
-    @include obj(auto,auto,null);
-  }
 
-  ul {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    animation:rot 16s linear infinite;
-    @keyframes rot {
-      100% {
-        transform:rotate(360deg);
-      }
+    &.f,
+    &.s {
+      animation: right .5s forwards;
     }
+
+    &.l {
+      animation: rightDown .4s .1s forwards linear, drop 2s .4s forwards linear;
+    }
+
+  }
+}
+
+.dot {
+
+  & {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 10px;
+    position: relative;
+    margin-left: 6px;
   }
 
-  li {
-    @include obj(40px,40px,$color);
-    border-radius:4px;
-    box-shadow: 0 0 1px #fff, 0 0 5px $color, 0 0 10px $color, 0 0 15px $color, 0 0 25px $color, 0 0 55px $color;
-    animation: scale 0.8s linear alternate infinite;
+  &.z {
+    position: absolute;
+    transform: scale(0);
 
     @keyframes scale {
       100% {
-        transform: scale(.1);
-        opacity: 0;
+        transform: scale(1);
       }
     }
-    @for $i from 1 through 25 {
-      &:nth-child(#{$i}) {
-        z-index: 25 - $i;
+  }
+
+  &.f,
+  &.s {
+    transform: translateX(0px);
+
+    @keyframes right {
+      100% {
+        transform: translateX(16px);
       }
     }
-    @for $i from 1 through 5 {
-        &:nth-child(#{$i}) {
-          animation-delay: 0.1s * $i;
-        }
-        &:nth-child(#{$i + 6}) {
-          @if ($i<5) {
-            animation-delay: 0.1s * $i + 0.2s;
-          }
-        }
-        &:nth-child(#{$i + 12}) {
-          @if ($i<4) {
-            animation-delay: 0.1s * $i + 0.4s;
-          }
-        }
-        &:nth-child(#{$i + 18}) {
-          @if ($i<3) {
-            animation-delay: 0.1s * $i + 0.6s;
-          }
-        }
-        &:nth-child(#{$i + 23}) {
-          @if ($i<2) {
-            animation-delay: 0.1s * $i + 0.8s;
-          }
-        }
+  }
+
+  &.t {
+    background: transparent;
+  }
+
+  .l {
+    margin-left: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @keyframes rightDown {
+
+      50% {
+        top: 4px;
+        left: 16px;
       }
 
-      $fCol: 1 6 11 16 21;
-      @include anim($fCol,0);
-
-      $sCol: 7 12 17 22;
-      @include anim($sCol,0.2s);
-
-      $tCol: 13 18 23;
-      @include anim($tCol,0.4s);
-
-      $foCol: 19 24;
-      @include anim($foCol,0.6s);
-
-      &:nth-child(25) {
-        animation-delay: 0.9s;
+      100% {
+        top: 12px;
+        left: 24px;
       }
     }
+
+    @keyframes drop {
+      100% {
+        transform: translate(70px, calc(35px + (100vh/2)));
+      }
+    }
+  }
+
+}
+
+
+// ABS
+// =====================================
+.abs-twitter {
+
+  & {
+    position: fixed;
+    right: calc(24px + .6vw);
+    top: calc(22px + .6vw);
+    transform: translate(-8px, 4px);
+    opacity: 0;
+    transition: .3s ease-in;
+  }
+
+  &--show {
+    transform: translate(0, 0);
+    opacity: 1;
+    animation: birdie 1s .8s linear infinite;
+  }
+
+  @keyframes birdie {
+    13% {
+      transform: rotate(14deg);
+    }
+
+    26% {
+      transform: rotate(28deg)
+    }
+
+    100% {
+      transform: rotate(0deg)
+    }
+  }
+
+}
 </style>
