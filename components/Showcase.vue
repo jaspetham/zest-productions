@@ -2,7 +2,7 @@
   <section id="showcase" class="section-split">
       <div class="scroll-thing-wrapper">
         <section class="scroll-thing hidden lg:block">
-          <div id="row" class="row text-main">
+          <div id="row" class="row">
             <span class="scroll-text">Showcase / Showcase / Showcase / Showcase / Showcase / Showcase / Showcase / </span>
             <span class="scroll-text">Showcase / Showcase / Showcase / Showcase / Showcase / Showcase / Showcase / </span>
             <span class="scroll-text">Showcase / Showcase / Showcase / Showcase / Showcase / Showcase / Showcase / </span>
@@ -15,7 +15,7 @@
         </section>
         <section class="lg:hidden scroll-thing mobile">
           <div class="marquee-container">
-            <div class="marquee text-main" style="--play:running; --direction:normal; --duration:60s; --delay:0s; --iteration-count:infinite;">
+            <div class="marquee" style="--play:running; --direction:normal; --duration:60s; --delay:0s; --iteration-count:infinite;">
               <span class="scroll-text">Showcase / Showcase / Showcase / Showcase / Showcase / Showcase / Showcase</span>
               <span class="scroll-text">Showcase / Showcase / Showcase / Showcase / Showcase / Showcase / Showcase</span>
             </div>

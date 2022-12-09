@@ -330,9 +330,27 @@
     text-transform: uppercase;
     font-weight: 600;
     cursor: pointer;
+    position: relative;
   }
-  .selection.active{
+  .selection.active,.selection:hover{
     color:rgb(var(--clr-main));
+  }
+  .selection::after{
+    opacity: 0;
+    position: absolute;
+    content:'';
+    left:50%;
+    bottom:0;
+    transform:translateX(-150%);
+    width:100%;
+    height:4px;
+    border-radius: 10px;
+    background:rgb(var(--clr-main));
+    transition: all .5s ease;
+  }
+  .selection.active::after,.selection:hover::after{
+    opacity: 1;
+    transform:translateX(-50%);
   }
   .images-wrapper{
     width:0;
